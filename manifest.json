@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+
+  "name": "Freshteam Candidate Hunt",
+  "description": "An extension for scoring candidates for a job",
+  "version": "1.0",
+  "author": "@Sisiliya",
+
+  "background": {
+    "scripts": ["popup.js", "background.js"],
+    "persistent": true
+  },
+
+  "permissions": [
+      "tabs",
+      "activeTab",
+      "*://*.linkedin.com/*",
+      "*://*/*",
+      "https://ajax.googleapis.com/"
+   ],
+
+  "content_scripts": [{
+    "run_at": "document_end",
+    "matches": [
+      "https://*/*",
+      "http://*/*"
+    ],
+    "css": [ "css/plugin.css"],
+    "js": ["content-script.js"]
+  }],
+
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  },
+
+  "web_accessible_resources": [
+    "popup.html"
+  ]
+}

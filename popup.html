@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Freshteam Candidate Search</title>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="popup.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+
+    <style type="text/css">
+      body{
+        width: 400px;
+        height: 800px;
+      }
+
+
+.cssload-preloader {
+  font-family: Arial, Tahoma;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  display: box;
+    display: -o-box;
+    display: -ms-box;
+    display: -webkit-box;
+    display: -moz-box;
+  display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+  box-pack: center;
+    -o-box-pack: center;
+    -ms-box-pack: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+  justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+  box-align: center;
+    -o-box-align: center;
+    -ms-box-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+  align-items: center;
+    -o-align-items: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+  transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+  perspective: 487px;
+    -o-perspective: 487px;
+    -ms-perspective: 487px;
+    -webkit-perspective: 487px;
+    -moz-perspective: 487px;
+  overflow: hidden;
+  animation: wobble 5.75s ease-in-out infinite;
+    -o-animation: wobble 5.75s ease-in-out infinite;
+    -ms-animation: wobble 5.75s ease-in-out infinite;
+    -webkit-animation: wobble 5.75s ease-in-out infinite;
+    -moz-animation: wobble 5.75s ease-in-out infinite;
+  padding-bottom: 2em;
+}
+
+
+.cssload-preloader > span {
+  font-size: 30px;
+  animation: 5.75s ease-in-out infinite;
+    -o-animation: 5.75s ease-in-out infinite;
+    -ms-animation: 5.75s ease-in-out infinite;
+    -webkit-animation: 5.75s ease-in-out infinite;
+    -moz-animation: 5.75s ease-in-out infinite;
+  color: transparent;
+  text-shadow: 0 0 0px rgba(64,98,124,0.98);
+}
+span:nth-child(-n+3) {
+  animation-delay: -2.88s;
+    -o-animation-delay: -2.88s;
+    -ms-animation-delay: -2.88s;
+    -webkit-animation-delay: -2.88s;
+    -moz-animation-delay: -2.88s;
+}
+
+span:nth-child(1),
+span:nth-last-child(1) {
+  animation-name: blur-1;
+    -o-animation-name: blur-1;
+    -ms-animation-name: blur-1;
+    -webkit-animation-name: blur-1;
+    -moz-animation-name: blur-1;
+}
+
+
+
+span:nth-child(2),
+span:nth-last-child(2) {
+  animation-name: blur-2;
+    -o-animation-name: blur-2;
+    -ms-animation-name: blur-2;
+    -webkit-animation-name: blur-2;
+    -moz-animation-name: blur-2;
+}
+
+
+
+span:nth-child(3),
+span:nth-last-child(3) {
+  animation-name: blur-3;
+    -o-animation-name: blur-3;
+    -ms-animation-name: blur-3;
+    -webkit-animation-name: blur-3;
+    -moz-animation-name: blur-3;
+}
+
+
+
+
+
+
+@keyframes blur-1 {
+  50% {
+    text-shadow: 0 0 0.15em rgb(0,0,0);
+  }
+}
+
+@-o-keyframes blur-1 {
+  50% {
+    text-shadow: 0 0 0.15em rgb(0,0,0);
+  }
+}
+
+@-ms-keyframes blur-1 {
+  50% {
+    text-shadow: 0 0 0.15em rgb(0,0,0);
+  }
+}
+
+@-webkit-keyframes blur-1 {
+  50% {
+    text-shadow: 0 0 0.15em rgb(0,0,0);
+  }
+}
+
+@-moz-keyframes blur-1 {
+  50% {
+    text-shadow: 0 0 0.15em rgb(0,0,0);
+  }
+}
+
+@keyframes blur-2 {
+  50% {
+    text-shadow: 0 0 0.075em rgb(0,0,0);
+  }
+}
+
+@-o-keyframes blur-2 {
+  50% {
+    text-shadow: 0 0 0.075em rgb(0,0,0);
+  }
+}
+
+@-ms-keyframes blur-2 {
+  50% {
+    text-shadow: 0 0 0.075em rgb(0,0,0);
+  }
+}
+
+@-webkit-keyframes blur-2 {
+  50% {
+    text-shadow: 0 0 0.075em rgb(0,0,0);
+  }
+}
+
+@-moz-keyframes blur-2 {
+  50% {
+    text-shadow: 0 0 0.075em rgb(0,0,0);
+  }
+}
+
+@keyframes blur-3 {
+  50% {
+    text-shadow: 0 0 0.05em rgb(0,0,0);
+  }
+}
+
+@-o-keyframes blur-3 {
+  50% {
+    text-shadow: 0 0 0.05em rgb(0,0,0);
+  }
+}
+
+@-ms-keyframes blur-3 {
+  50% {
+    text-shadow: 0 0 0.05em rgb(0,0,0);
+  }
+}
+
+@-webkit-keyframes blur-3 {
+  50% {
+    text-shadow: 0 0 0.05em rgb(0,0,0);
+  }
+}
+
+@-moz-keyframes blur-3 {
+  50% {
+    text-shadow: 0 0 0.05em rgb(0,0,0);
+  }
+}
+
+@keyframes wobble {
+  from, to {
+    transform: rotateY(-45deg);
+  }
+  50% {
+    transform: rotateY(45deg);
+  }
+}
+
+@-o-keyframes wobble {
+  from, to {
+    -o-transform: rotateY(-45deg);
+  }
+  50% {
+    -o-transform: rotateY(45deg);
+  }
+}
+
+@-ms-keyframes wobble {
+  from, to {
+    -ms-transform: rotateY(-45deg);
+  }
+  50% {
+    -ms-transform: rotateY(45deg);
+  }
+}
+
+@-webkit-keyframes wobble {
+  from, to {
+    -webkit-transform: rotateY(-45deg);
+  }
+  50% {
+    -webkit-transform: rotateY(45deg);
+  }
+}
+
+@-moz-keyframes wobble {
+  from, to {
+    -moz-transform: rotateY(-45deg);
+  }
+  50% {
+    -moz-transform: rotateY(45deg);
+  }
+}
+
+    </style>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/plugin.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <center><h3 style="color: #40627c" >Add Candidate</h1></center>
+        <!-- <div class="w3-card">
+          <p>w3-card</p>
+        </div> -->
+        <div class="text-center">
+          <img id="profile_pic" src="guy.png" class="rounded-circle" style="width:100px;">
+        </div>
+        <br>
+        <form id='form' class="from-custom mt30">
+        <br>
+        <label for="firstname" style="color: #40627c">First Name:</label>
+        <br>
+        <input id='firstname' type='text' size="50"/>
+        <br>
+        <br>
+        <label for="lastname" style="color: #40627c">Last Name:</label>
+        <br>
+        <input id='lastname' type='text' size="50"/>
+        <br>
+        <br>
+        <label for="email" style="color: #40627c">Email:</label>
+        <br>
+        <input id='email' type='text' size="50"/>
+        <br>
+        <br>
+        <div class="container mx-auto" id='score_board'>
+          <div class="cssload-preloader" id="loader">
+            <span>S</span>
+            <span>c</span>
+            <span>o</span>
+            <span>r</span>
+            <span>e</span>
+            &emsp;
+            <span>o</span>
+            <span>n</span>
+            &emsp;
+            <span>t</span>
+            <span>h</span>
+            <span>e</span>
+            &emsp;
+            <span>w</span>
+            <span>a</span>
+            <span>y</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+          </div><br><br><br>
+          <!-- <span id="initial_score"></span> -->
+        </div> <!-- //.container -->
+        <br><br>
+        <div id='job_suggestion' class="text-center"></div>
+        <br><br>
+          <label for="dropdown" style="color: #40627c">Job Role:</label>
+          <select id="dropdown" class="form-control"  value="Select Job">
+          </select>
+        <br><br>
+        <div id='scores' style='display:none;' class='text-center'>
+          <input id="fetch_score" type="button" style="background-color: #40627c;color:white;" value="Check score"/>
+          <input id='all_scores' type='button' value='View All Scores' style='color:white;background-color: #40627c'/>
+        </div>
+        <br>
+        <label for="dropDown" style="color: #40627c">Add as a: </label>
+        <select id="dropDown" class="form-control" value="Add Candidate">
+          <option id="referral" value="Referral">Referral</option>
+          <option id="talentpool" value="TalentPool">Talent Pool</option>
+        </select>
+        <br>
+        <div class='text-center'>
+          <input id="mode" type="button" style="background-color: #40627c;color:white;" value="Add Candidate" class='text-center'/>
+        </div>
+        <br><br>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
